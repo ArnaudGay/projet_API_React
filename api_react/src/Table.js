@@ -2,10 +2,11 @@ import React, { Component } from "react";
 
 class Table extends Component {
   render() {
+    const { tableContent } = this.props;
     return (
       <table>
         <TableHeader />
-        <Tablebody />
+        <Tablebody tableContent={tableContent} />
       </table>
     );
   }
@@ -22,39 +23,16 @@ const TableHeader = () => {
   );
 };
 
-const Tablebody = () => {
-  return (
-    <tbody>
-      <tr>
-        <td>Arnaud</td>
-        <td>Homme</td>
+const Tablebody = (props) => {
+  const rows = props.tableContent.map((row, index) => {
+    return (
+      <tr key={index}>
+        <td>{row.name}</td>
+        <td>{row.type}</td>
       </tr>
-      <tr>
-        <td>Thomas</td>
-        <td>Homme</td>
-      </tr>
-      <tr>
-        <td>Mellisa</td>
-        <td>Femme</td>
-      </tr>
-      <tr>
-        <td>Félix</td>
-        <td>Homme</td>
-      </tr>
-      <tr>
-        <td>Robinson</td>
-        <td>Homme</td>
-      </tr>
-      <tr>
-        <td>Satine</td>
-        <td>Femme</td>
-      </tr>
-      <tr>
-        <td>Manon</td>
-        <td>Femme</td>
-      </tr>
-    </tbody>
-  );
+    );
+  });
+  return <tbody>{rows}</tbody>;
 };
 
 export default Table;

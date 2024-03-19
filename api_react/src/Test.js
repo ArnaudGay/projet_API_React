@@ -3,7 +3,6 @@ import Table from "./Table";
 
 class Test extends Component {
   render() {
-    return (<Table tableContent={dataToPass} />;)
     const dataToPass = [
       {
         name: "Jules",
@@ -26,6 +25,14 @@ class Test extends Component {
         type: "DCommerciale",
       },
     ];
+    return (
+      <div className="Test">
+        <h1>Notre entreprise</h1>
+        <div className="Test">
+          <Table tableContent={dataToPass} />
+        </div>
+      </div>
+    );
   }
 }
 
