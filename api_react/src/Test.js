@@ -27,7 +27,9 @@ class Test extends Component {
     ];
     return (
       <div className="Test">
-        <h1>Notre entreprise</h1>
+        <h1>Moviedle</h1>
+        <label>Ecrit moi le nom d'un film:</label>
+        <input>Le nom du film</input>
         <div className="Test">
           <Table tableContent={dataToPass} />
         </div>
