@@ -31,16 +31,18 @@ export default function SearchOmdbApi({ transferData }) {
   }
 
   return (
-    <form action="/search" method="get">
-      <input
-        type="text"
-        name="movie"
-        placeholder="Search for a movie..."
-        style="width:800px; height: 40px; /"
-        value={searchValue}
-        onChange={inputChange}
-        onBlur={handleLeftInput}
-      />
-    </form>
+    <div>
+      <form className="form" action="/search" method="get">
+        <input
+          className="input"
+          type="text"
+          name="movie"
+          placeholder="Search for a movie..."
+          value={searchValue}
+          onChange={inputChange}
+          onBlur={handleLeftInput}
+        />
+      </form>
+    </div>
   );
 }
