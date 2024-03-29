@@ -100,22 +100,37 @@ export default function Display() {
   }
 
   return (
-    <div className="Display">
-      <h1>Guess the movie</h1>
-      <Table tableContent={dataToPass} />
+    <div>
+      <div class="header-left">
+        <h1>GUESS MOVIE</h1>
+      </div>
+      <div>
+        <p>
+          Welcome to the movie guessing game! Start by typing the title of a
+          movie to discover clues on the movie
+        </p>
+      </div>
       <SearchOmdbApi transferData={setDataApi} />
       <button
+        type="submit"
+        style="margin-left: 20px"
         onClick={() => {
           checkDiff(dataToPass, dataApi);
         }}
       >
-        Check
+        Search
       </button>
 
       {isWin && (
         <div>
           <div>Well play! You succes this game!</div>
-          <button onClick={() => {setIsWin(false), }}>Retry</button>
+          <button
+            onClick={() => {
+              setIsWin(false);
+            }}
+          >
+            Retry
+          </button>
         </div>
       )}
     </div>

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { InputGroup, Form } from "react-bootstrap";
 const { API_KEY } = require("./config.json");
 
 export default function SearchOmdbApi({ transferData }) {
@@ -32,16 +31,16 @@ export default function SearchOmdbApi({ transferData }) {
   }
 
   return (
-    <InputGroup className="mb-3">
-      <Form.Control
-        id="search"
-        placeholder="Recipient's username"
-        aria-label="Recipient's username"
-        aria-describedby="basic-addon2"
+    <form action="/search" method="get">
+      <input
+        type="text"
+        name="movie"
+        placeholder="Search for a movie..."
+        style="width:800px; height: 40px; /"
         value={searchValue}
         onChange={inputChange}
         onBlur={handleLeftInput}
       />
-    </InputGroup>
+    </form>
   );
 }

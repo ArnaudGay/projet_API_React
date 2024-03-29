@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <div class="header-left">
+      <h1>GUESS MOVIE</h1>
+    </div>
+  </header>
+  <style>
+    body {
+      margin: 0 auto;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+    form {
+      text-align: center;
+    }
+  </style>
+  <body>
+    <p>
+      Welcome to the movie guessing game! Start by typing the title of a movie
+      to discover clues on the movie
+    </p>
+    <form action="/search" method="get">
+      <input
+        type="text"
+        name="movie"
+        placeholder="Search for a movie..."
+        style="width:800px; height: 40px; /"
+      />
+      <button type="submit" style="margin-left: 20px">Search</button>
+    </form>
+  </body>
+</html>
