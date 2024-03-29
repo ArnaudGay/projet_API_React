@@ -115,7 +115,7 @@ export default function Display() {
       {isWin && (
         <div>
           <div>Well play! You succes this game!</div>
-          <button onClick={() => setIsWin(false)}>Retry</button>
+          <button onClick={() => {setIsWin(false), }}>Retry</button>
         </div>
       )}
     </div>
