@@ -1,14 +1,21 @@
-body {
+.body {
   margin: 0 auto;
   max-width: 800px;
   padding: 20px;
 }
 
-h1,
-h2 {
+.h1 {
   text-align: center;
 }
 
-form {
+.form {
   text-align: center;
+}
+
+.button {
+  margin-top: 20px;
+}
+.input {
+  width: 800px;
+  height: 40px;
 }

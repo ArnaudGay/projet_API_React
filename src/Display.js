@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Table from "./Table";
 import SearchOmdbApi from "./SearchOmdbApi";
 
 export default function Display() {
@@ -101,38 +100,31 @@ export default function Display() {
 
   return (
     <div>
-      <div class="header-left">
-        <h1>GUESS MOVIE</h1>
+      <div className="header-left">
+        <h1 className="h1">GUESS MOVIE</h1>
       </div>
-      <div>
+      <div className="body">
         <p>
           Welcome to the movie guessing game! Start by typing the title of a
           movie to discover clues on the movie
         </p>
-      </div>
-      <SearchOmdbApi transferData={setDataApi} />
-      <button
-        type="submit"
-        style="margin-left: 20px"
-        onClick={() => {
-          checkDiff(dataToPass, dataApi);
-        }}
-      >
-        Search
-      </button>
+        <SearchOmdbApi transferData={setDataApi} />
+        <button
+          className="button"
+          onClick={() => {
+            checkDiff(dataToPass, dataApi);
+          }}
+        >
+          Search
+        </button>
 
-      {isWin && (
-        <div>
-          <div>Well play! You succes this game!</div>
-          <button
-            onClick={() => {
-              setIsWin(false);
-            }}
-          >
-            Retry
-          </button>
-        </div>
-      )}
+        {isWin && (
+          <div>
+            <div>Well play! You succes this game!</div>
+            <button onClick={() => window.location.reload()}>Retry</button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
